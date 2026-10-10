@@ -1967,7 +1967,7 @@ html body #app #v1 .dsbody{padding:0 calc(var(--u)*12) calc(var(--u)*12)}
 html body #app #v1 .qsg{display:grid;grid-template-columns:1fr 1fr;column-gap:calc(var(--u)*12);row-gap:0;margin:0;padding:0}
 html body #app #v1 .dsc{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--u)*8);min-height:calc(var(--u)*52);padding:calc(var(--u)*5) calc(var(--u)*12);background:#fff;border:1px solid #dbe5f4;margin-top:-1px;min-width:0;box-sizing:border-box}
 html body #app #v1 .qsg:not(.qone) .dsc:nth-child(-n+2){margin-top:0;border-radius:calc(var(--u)*8) calc(var(--u)*8) 0 0}
-html body #app #v1 .qsg:not(.qone) .dsc:nth-child(6){border-radius:0 0 calc(var(--u)*8) calc(var(--u)*8)}
+html body #app #v1 .qsg:not(.qone) .dsc:nth-child(8){border-radius:0 0 calc(var(--u)*8) calc(var(--u)*8)}
 html body #app #v1 .qsg:not(.qone) .dsc:nth-child(7){border-radius:0 0 calc(var(--u)*8) calc(var(--u)*8)}
 html body #app #v1 .qsg.qone{grid-template-columns:1fr}
 html body #app #v1 .qsg.qone .dsc:first-child{margin-top:0;border-radius:calc(var(--u)*8) calc(var(--u)*8) 0 0}
@@ -2160,6 +2160,7 @@ function dbxSpec(p){
   +dbxCell('SVR (고형분 용적비)',p.svr?p.svr+'%':'-')
   +dbxCell('추천도막',p.dft?p.dft+'μm':'-')
   +dbxCell('이론 도장면적 (L·kg당 · 로스 제외)',area,'qbig')
+  +dbxCell('혼합규격당 도장면적',cov1(p)?F(cov1(p),1)+'m²':'-')
   +`</div>`;
 }
 function dbxMore(p){
@@ -2167,7 +2168,7 @@ function dbxMore(p){
  let h='<div class="qsg qone">';
  if(p.g&&p.d)h+=dbxCell('제품설명',esc(p.d),'qw');
  if(p.sg)h+=dbxCell('비중',F(p.sg));
- if(c1)h+=dbxCell('1말당 이론면적',F(c1,1)+'m²');
+ 
  if(p.pre)h+=dbxCell('선행도장',esc(p.pre));
  if(p.nxt)h+=dbxCell('후속도장',esc(p.nxt));
  if(p.pks)h+=dbxCell('데이터시트 포장규격',esc(p.pks));
